@@ -1,0 +1,74 @@
+{
+  "simulation": {
+    "n_paths": 10000,
+    "start_year": 0.0,
+    "end_year": 10.0,
+    "steps_per_year": 12,
+    "random_seed": 42
+  },
+  "risk_factors": {
+    "eur_rate": {
+      "r0": 0.015,
+      "a": 0.04,
+      "theta": 0.025,
+      "sigma": 0.012
+    },
+    "usd_rate": {
+      "r0": 0.025,
+      "a": 0.05,
+      "theta": 0.035,
+      "sigma": 0.01
+    },
+    "eur_usd_fx": {
+      "spot0": 1.1,
+      "mu": 0.0,
+      "sigma": 0.1
+    }
+  },
+  "correlation_matrix": {
+    "labels": [
+      "eur_rate",
+      "usd_rate",
+      "eur_usd_fx"
+    ],
+    "values": [
+      [
+        1.0,
+        0.6,
+        0.15
+      ],
+      [
+        0.6,
+        1.0,
+        0.1
+      ],
+      [
+        0.15,
+        0.1,
+        1.0
+      ]
+    ]
+  },
+  "portfolio": {
+    "collateral_threshold": 50000.0,
+    "minimum_transfer_amount": 1000.0,
+    "trades": [
+      {
+        "trade_id": "IRS_EUR_RECEIVER_001",
+        "currency": "EUR",
+        "notional": 1000000,
+        "fixed_rate": 0.02,
+        "maturity_years": 10,
+        "pay_receive_fixed": "receive"
+      },
+      {
+        "trade_id": "IRS_USD_PAYER_001",
+        "currency": "USD",
+        "notional": 900000,
+        "fixed_rate": 0.03,
+        "maturity_years": 10,
+        "pay_receive_fixed": "pay"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.env
+.venv/
+venv/
+outputs/*.csv
+outputs/*.png
+!outputs/README.md
